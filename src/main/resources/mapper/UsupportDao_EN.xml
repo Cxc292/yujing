@@ -1,0 +1,11 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.user.support.UsupportDao_EN" >
+
+    <select id="uselectsupport" resultType="com.yujing.yujing.pojo.Support">
+        select * from support_en
+    </select>
+
+</mapper>
+

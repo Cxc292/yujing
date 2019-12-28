@@ -1,0 +1,39 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yujing.yujing.dao.user.product.UproductDao" >
+
+    <select id="uselectcountproduct" resultType="java.lang.Integer">
+        select count(*) from product
+    </select>
+
+    <select id="uselectproductlimit" resultType="com.yujing.yujing.pojo.Product" parameterType="java.lang.Integer">
+        SELECT * FROM product where type = ${param3} limit ${param1},${param2}
+    </select>
+
+    <select id="uselectproductbyid" resultType="com.yujing.yujing.pojo.Product" parameterType="java.lang.Integer">
+        SELECT * FROM product where id = #{param1}
+    </select>
+
+    <select id="uselectproductflowid" parameterType="java.lang.Integer" resultType="com.yujing.yujing.pojo.Product_flow">
+        select * from product_flow where pid = #{id}
+    </select>
+
+    <select id="uselectproductimgid" parameterType="java.lang.Integer" resultType="com.yujing.yujing.pojo.Product_img">
+        select * from product_img where pid = #{id}
+    </select>
+
+    <select id="uselectproductdetailsid" parameterType="java.lang.Integer" resultType="com.yujing.yujing.pojo.Product_details">
+        select * from product_details where pid = #{id}
+    </select>
+
+    <select id="uselectproducttype" resultType="com.yujing.yujing.pojo.Product_type">
+        select * from product_type
+    </select>
+
+    <select id="uselectproductname" resultType="com.yujing.yujing.pojo.Product" parameterType="java.lang.String">
+        select id,name from product where name like "%"#{param1}"%" limit 0,4
+    </select>
+
+</mapper>
+
